@@ -2,14 +2,16 @@ using System.Threading.Tasks; // Trabalhando de forma assíncrona
 using Microsoft.AspNetCore.Mvc; // herança ControllerBase
 using WebAPI.Services;
 using Microsoft.AspNetCore.Http;
+using WebAPI.Services.Interface;
+
 namespace WebAPI.Controllers
 {
     [ApiController]
     [Route("[controller]")]
     public class EventosController : ControllerBase
     {
-        private readonly EventoService _service;
-        public EventosController(EventoService service)
+        private readonly IEventoService _service;
+        public EventosController(IEventoService service)
         {
             _service = service;
         }

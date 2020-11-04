@@ -1,17 +1,17 @@
 {
   "format": 1,
   "restore": {
-    "C:\\Dev\\projeto_csharp_angular\\ProjetoAgilBackEnd\\WebAPI\\WebAPI.csproj": {}
+    "C:\\Dev\\Projetos_pessoais\\Eventos\\ProjetoAgil\\ProjetoAgilBackEnd\\WebAPI\\WebAPI.csproj": {}
   },
   "projects": {
-    "C:\\Dev\\projeto_csharp_angular\\ProjetoAgilBackEnd\\WebAPI\\WebAPI.csproj": {
+    "C:\\Dev\\Projetos_pessoais\\Eventos\\ProjetoAgil\\ProjetoAgilBackEnd\\WebAPI\\WebAPI.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "C:\\Dev\\projeto_csharp_angular\\ProjetoAgilBackEnd\\WebAPI\\WebAPI.csproj",
+        "projectUniqueName": "C:\\Dev\\Projetos_pessoais\\Eventos\\ProjetoAgil\\ProjetoAgilBackEnd\\WebAPI\\WebAPI.csproj",
         "projectName": "WebAPI",
-        "projectPath": "C:\\Dev\\projeto_csharp_angular\\ProjetoAgilBackEnd\\WebAPI\\WebAPI.csproj",
+        "projectPath": "C:\\Dev\\Projetos_pessoais\\Eventos\\ProjetoAgil\\ProjetoAgilBackEnd\\WebAPI\\WebAPI.csproj",
         "packagesPath": "C:\\Users\\jadei\\.nuget\\packages\\",
-        "outputPath": "C:\\Dev\\projeto_csharp_angular\\ProjetoAgilBackEnd\\WebAPI\\obj\\",
+        "outputPath": "C:\\Dev\\Projetos_pessoais\\Eventos\\ProjetoAgil\\ProjetoAgilBackEnd\\WebAPI\\obj\\",
         "projectStyle": "PackageReference",
         "configFilePaths": [
           "C:\\Users\\jadei\\AppData\\Roaming\\NuGet\\NuGet.Config",
@@ -38,6 +38,10 @@
       "frameworks": {
         "netcoreapp3.1": {
           "dependencies": {
+            "Microsoft.AspNetCore.Authentication.JwtBearer": {
+              "target": "Package",
+              "version": "[3.1.9, )"
+            },
             "Microsoft.EntityFrameworkCore.SqlServer": {
               "target": "Package",
               "version": "[5.0.0-rc.1.20451.13, )"
@@ -67,7 +71,7 @@
               "privateAssets": "all"
             }
           },
-          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\3.1.302\\RuntimeIdentifierGraph.json"
+          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\3.1.403\\RuntimeIdentifierGraph.json"
         }
       }
     }

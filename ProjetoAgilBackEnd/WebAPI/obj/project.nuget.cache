@@ -1,10 +1,11 @@
 {
   "version": 2,
-  "dgSpecHash": "/HsOm8JxMTBG6RefQs6Ll+gqnsHLMY8li3JnY5t8OoeMneTeituyPm2faOkR7fvStaiNeJqHkz272Io4ZX7p5g==",
+  "dgSpecHash": "z8zcnf+Bem5mNHbvrqlQLrvA8/nud7E9yzxJOf1utWwEvtSjCE1v7kNqw33eKvNj+gxtdxIwEWjHnhQRPOjpLg==",
   "success": true,
-  "projectFilePath": "C:\\Dev\\projeto_csharp_angular\\ProjetoAgilBackEnd\\WebAPI\\WebAPI.csproj",
+  "projectFilePath": "C:\\Dev\\Projetos_pessoais\\Eventos\\ProjetoAgil\\ProjetoAgilBackEnd\\WebAPI\\WebAPI.csproj",
   "expectedPackageFiles": [
     "C:\\Users\\jadei\\.nuget\\packages\\humanizer.core\\2.8.26\\humanizer.core.2.8.26.nupkg.sha512",
+    "C:\\Users\\jadei\\.nuget\\packages\\microsoft.aspnetcore.authentication.jwtbearer\\3.1.9\\microsoft.aspnetcore.authentication.jwtbearer.3.1.9.nupkg.sha512",
     "C:\\Users\\jadei\\.nuget\\packages\\microsoft.csharp\\4.7.0\\microsoft.csharp.4.7.0.nupkg.sha512",
     "C:\\Users\\jadei\\.nuget\\packages\\microsoft.data.sqlclient\\2.0.1\\microsoft.data.sqlclient.2.0.1.nupkg.sha512",
     "C:\\Users\\jadei\\.nuget\\packages\\microsoft.data.sqlclient.sni.runtime\\2.0.1\\microsoft.data.sqlclient.sni.runtime.2.0.1.nupkg.sha512",
