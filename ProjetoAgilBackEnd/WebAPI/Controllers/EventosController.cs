@@ -3,6 +3,7 @@ using Microsoft.AspNetCore.Mvc; // herança ControllerBase
 using WebAPI.Services;
 using Microsoft.AspNetCore.Http;
 using WebAPI.Services.Interface;
+using WebAPI.Facades.Interface;
 
 namespace WebAPI.Controllers
 {
@@ -10,17 +11,18 @@ namespace WebAPI.Controllers
     [Route("[controller]")]
     public class EventosController : ControllerBase
     {
-        private readonly IEventoService _service;
-        public EventosController(IEventoService service)
+        private readonly IEventosFacade _eventosFacade;
+        public EventosController(IEventosFacade eventosFacade)
         {
-            _service = service;
+            _eventosFacade = eventosFacade;
         }
+
         [HttpGet]
         public async Task<IActionResult> Get()
         {
             try
             {
-                var eventos = await _service.FindAll();
+                var eventos = await _eventosFacade.FindAll();
                 return Ok(eventos);
             }
             catch (System.Exception)

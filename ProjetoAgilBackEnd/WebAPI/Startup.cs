@@ -19,6 +19,11 @@ using WebAPI.Repositories;
 using WebAPI.Services.Interface;
 using WebAPI.UnitOfWork.Interface;
 using WebAPI.UnitOfWork;
+using WebAPI.Facades.Interface;
+using WebAPI.Facades;
+using Microsoft.IdentityModel.Tokens;
+using System.Text;
+using WebAPI.Poco;
 
 namespace WebAPI
 {
@@ -35,20 +40,19 @@ namespace WebAPI
         readonly string MyAllowSpecificOrigins = "_myAllowSpecificOrigins";
         public void ConfigureServices(IServiceCollection services)
         {
-
-            services.AddAuthentication(options => 
-            {
-                options.DefaultAuthenticateScheme = JwtBearerDefaults.AuthenticationScheme;
-                options.DefaultChallengeScheme = JwtBearerDefaults.AuthenticationScheme;
-            });
             services.AddControllers();
             // using Microsoft.EntityFrameworkCore;
             services.AddDbContext<AppDbContext>(options =>
-                options.UseSqlServer(Configuration.GetConnectionString("DefaultConnection")));   
+                options.UseSqlServer(Configuration.GetConnectionString("DefaultConnection")));
 
-            this.Services(services);
-            this.Repositories(services);
-            this.UnitOfWork(services);
+            services.Configure<JwtPoco>(Configuration.GetSection("Authentication:Jwt"));
+
+            ConfigureAuthenticationSettings(services);
+
+            Services(services);
+            Repositories(services);
+            UnitOfWork(services);
+            Facades(services);
 
             services.AddCors(options =>
             {
@@ -75,6 +79,8 @@ namespace WebAPI
 
             app.UseCors(MyAllowSpecificOrigins);
 
+            app.UseAuthentication();
+
             app.UseHttpsRedirection();
 
             app.UseRouting();
@@ -87,17 +93,57 @@ namespace WebAPI
             });
         }
 
+        #region Repository
         public void Repositories(IServiceCollection services)
         {
             services.AddTransient<IEventoRepository, EnventoRepository>();
         }
+        #endregion
+        
+        #region Services
         public void Services(IServiceCollection services)
         {
             services.AddTransient<IEventoService, EventoService>();
+            services.AddTransient<IAuthService, AuthService>();
         }
+        #endregion
+
+        #region UnitOfWork
         public void UnitOfWork(IServiceCollection services)
         {
             services.AddTransient<IUnitOfWork, UnitofWork>();
         }
+        #endregion
+
+        #region Facades
+        public void Facades(IServiceCollection services)
+        {
+            services.AddTransient<IEventosFacade, EventosFacade>();
+            services.AddTransient<IAuthFacade, AuthFacade>();
+        }
+        #endregion
+
+
+        #region Configure Auth
+        private void ConfigureAuthenticationSettings(IServiceCollection services)
+        {
+            services.AddAuthentication(x =>
+            {
+                x.DefaultAuthenticateScheme = JwtBearerDefaults.AuthenticationScheme;
+                x.DefaultChallengeScheme = JwtBearerDefaults.AuthenticationScheme;
+            }).AddJwtBearer(x =>
+            {
+                x.RequireHttpsMetadata = false;
+                x.SaveToken = true;
+                x.TokenValidationParameters = new TokenValidationParameters
+                {
+                    ValidateIssuerSigningKey = true,
+                    IssuerSigningKey = new SymmetricSecurityKey(Encoding.ASCII.GetBytes(Configuration["Authentication:Jwt:Secret"])),
+                    ValidateIssuer = false,
+                    ValidateAudience = false
+                };
+            });
+        }
+        #endregion
     }
 }

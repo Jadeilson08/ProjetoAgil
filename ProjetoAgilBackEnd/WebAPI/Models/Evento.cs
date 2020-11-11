@@ -5,8 +5,7 @@ namespace WebAPI.Models
     public class Evento
     {
         [Key]
-        public int EventoId { get; set; }
-        
+        public int Id { get; set; }
         public string Local { get; set; }
         [DataType(DataType.Date)]
         public DateTime DataEvento { get; set; }
@@ -15,5 +14,8 @@ namespace WebAPI.Models
         public int QtdPessoas { get; set; }
         public string Lote { get; set; }
         public string Imagem { get; set; }
+        public int UserId { get; set; }
+        public User User { get; set; }
+
     }
 }

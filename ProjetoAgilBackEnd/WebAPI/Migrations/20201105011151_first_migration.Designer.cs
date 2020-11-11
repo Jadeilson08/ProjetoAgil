@@ -10,8 +10,8 @@ using WebAPI.Data;
 namespace WebAPI.Migrations
 {
     [DbContext(typeof(AppDbContext))]
-    [Migration("20200929140712_initial_migration")]
-    partial class initial_migration
+    [Migration("20201105011151_first_migration")]
+    partial class first_migration
     {
         protected override void BuildTargetModel(ModelBuilder modelBuilder)
         {
@@ -23,7 +23,7 @@ namespace WebAPI.Migrations
 
             modelBuilder.Entity("WebAPI.Models.Evento", b =>
                 {
-                    b.Property<int>("EventoId")
+                    b.Property<int>("Id")
                         .ValueGeneratedOnAdd()
                         .HasColumnType("int")
                         .UseIdentityColumn();
@@ -44,11 +44,55 @@ namespace WebAPI.Migrations
                         .HasColumnType("int");
 
                     b.Property<string>("Tema")
+                        .IsRequired()
                         .HasColumnType("nvarchar(max)");
 
-                    b.HasKey("EventoId");
+                    b.Property<int>("UserId")
+                        .HasColumnType("int");
+
+                    b.HasKey("Id");
+
+                    b.HasIndex("UserId");
 
                     b.ToTable("Eventos");
+                });
+
+            modelBuilder.Entity("WebAPI.Models.User", b =>
+                {
+                    b.Property<int>("Id")
+                        .ValueGeneratedOnAdd()
+                        .HasColumnType("int")
+                        .UseIdentityColumn();
+
+                    b.Property<string>("Email")
+                        .IsRequired()
+                        .HasColumnType("nvarchar(max)");
+
+                    b.Property<string>("Foto")
+                        .HasColumnType("nvarchar(max)");
+
+                    b.Property<string>("Nome")
+                        .IsRequired()
+                        .HasColumnType("nvarchar(max)");
+
+                    b.Property<string>("Senha")
+                        .IsRequired()
+                        .HasColumnType("nvarchar(max)");
+
+                    b.HasKey("Id");
+
+                    b.ToTable("User");
+                });
+
+            modelBuilder.Entity("WebAPI.Models.Evento", b =>
+                {
+                    b.HasOne("WebAPI.Models.User", "User")
+                        .WithMany()
+                        .HasForeignKey("UserId")
+                        .OnDelete(DeleteBehavior.Cascade)
+                        .IsRequired();
+
+                    b.Navigation("User");
                 });
 #pragma warning restore 612, 618
         }

@@ -15,16 +15,16 @@ namespace WebAPI.Migrations
         {
 #pragma warning disable 612, 618
             modelBuilder
-                .UseIdentityColumns()
+                .UseIdentityColumns(1, 1)
                 .HasAnnotation("Relational:MaxIdentifierLength", 128)
                 .HasAnnotation("ProductVersion", "5.0.0-rc.1.20451.13");
 
             modelBuilder.Entity("WebAPI.Models.Evento", b =>
                 {
-                    b.Property<int>("EventoId")
+                    b.Property<int>("Id")
                         .ValueGeneratedOnAdd()
                         .HasColumnType("int")
-                        .UseIdentityColumn();
+                        .UseIdentityColumn(1, 1);
 
                     b.Property<DateTime>("DataEvento")
                         .HasColumnType("datetime2");
@@ -42,11 +42,55 @@ namespace WebAPI.Migrations
                         .HasColumnType("int");
 
                     b.Property<string>("Tema")
+                        .IsRequired()
                         .HasColumnType("nvarchar(max)");
 
-                    b.HasKey("EventoId");
+                    b.Property<int>("UserId")
+                        .HasColumnType("int");
+
+                    b.HasKey("Id");
+
+                    b.HasIndex("UserId");
 
                     b.ToTable("Eventos");
+                });
+
+            modelBuilder.Entity("WebAPI.Models.User", b =>
+                {
+                    b.Property<int>("Id")
+                        .ValueGeneratedOnAdd()
+                        .HasColumnType("int")
+                        .UseIdentityColumn(1, 1);
+
+                    b.Property<string>("Email")
+                        .IsRequired()
+                        .HasColumnType("nvarchar(max)");
+
+                    b.Property<string>("Foto")
+                        .HasColumnType("nvarchar(max)");
+
+                    b.Property<string>("Nome")
+                        .IsRequired()
+                        .HasColumnType("nvarchar(max)");
+
+                    b.Property<string>("Senha")
+                        .IsRequired()
+                        .HasColumnType("nvarchar(max)");
+
+                    b.HasKey("Id");
+
+                    b.ToTable("User");
+                });
+
+            modelBuilder.Entity("WebAPI.Models.Evento", b =>
+                {
+                    b.HasOne("WebAPI.Models.User", "User")
+                        .WithMany()
+                        .HasForeignKey("UserId")
+                        .OnDelete(DeleteBehavior.Cascade)
+                        .IsRequired();
+
+                    b.Navigation("User");
                 });
 #pragma warning restore 612, 618
         }
