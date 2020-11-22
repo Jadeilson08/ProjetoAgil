@@ -9,5 +9,6 @@ namespace WebAPI.Facades.Interface
     public interface IEventosFacade
     {
         Task<List<Evento>> FindAll();
+        Task SaveAsync(Evento evento);
     }
 }

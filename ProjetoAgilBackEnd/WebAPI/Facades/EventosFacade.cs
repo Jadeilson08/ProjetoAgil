@@ -20,5 +20,10 @@ namespace WebAPI.Facades
         {
             return await _eventoRepository.FindAllAsync();
         }
+
+        public async Task SaveAsync(Evento evento)
+        {
+            await _eventoRepository.SaveAsync(evento);
+        }
     }
 }

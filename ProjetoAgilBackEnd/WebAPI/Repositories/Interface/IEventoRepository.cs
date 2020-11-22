@@ -9,5 +9,6 @@ namespace WebAPI.Repositories.Interface
     public interface IEventoRepository
     {
         Task<List<Evento>> FindAllAsync();
+        Task SaveAsync(Evento evento);
     }
 }

@@ -24,6 +24,9 @@ using WebAPI.Facades;
 using Microsoft.IdentityModel.Tokens;
 using System.Text;
 using WebAPI.Poco;
+using Microsoft.Extensions.FileProviders;
+using System.IO;
+using Microsoft.AspNetCore.Http;
 
 namespace WebAPI
 {
@@ -78,6 +81,13 @@ namespace WebAPI
             }
 
             app.UseCors(MyAllowSpecificOrigins);
+
+            app.UseStaticFiles();
+            app.UseStaticFiles(new StaticFileOptions() 
+            { 
+                FileProvider = new PhysicalFileProvider(Path.Combine(Directory.GetCurrentDirectory(), @"Resources")),
+                RequestPath = new PathString("/Resources")
+            });
 
             app.UseAuthentication();
 

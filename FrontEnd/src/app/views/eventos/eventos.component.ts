@@ -1,11 +1,11 @@
 import { Component, OnInit } from '@angular/core';
-import { Evento } from "./Evento";
-import { EventosService } from "./eventos.service";
+import { Evento } from "../../models/Evento";
+import { EventosService } from "../../services/eventos.service";
 
 @Component({
   selector: 'app-eventos',
   templateUrl: './eventos.component.html',
-  styleUrls: ['./eventos.component.scss']
+  styleUrls: ['./eventos.component.css']
 })
 export class EventosComponent implements OnInit {
 
@@ -17,8 +17,6 @@ export class EventosComponent implements OnInit {
     this.eventoservice.getEventos().subscribe(
       data => {
         this.eventos = data;
-        console.log(data);
-        
       },
       error =>{
         console.log(error);
@@ -26,4 +24,9 @@ export class EventosComponent implements OnInit {
     )
   }
 
+
+  detalhe(eventoId: number){
+    console.log(eventoId);
+    
+  }
 }

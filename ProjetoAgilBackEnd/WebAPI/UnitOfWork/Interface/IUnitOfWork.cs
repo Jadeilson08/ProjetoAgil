@@ -7,6 +7,6 @@ namespace WebAPI.UnitOfWork.Interface
 {
     public interface IUnitOfWork
     {
-        void Commit();
+        Task Commit();
     }
 }
