@@ -1,9 +1,10 @@
 export class Evento {
-    eventoId: number;
+    id: number;
     local: string;
     dataEvento: Date;
     tema: string;
     qtdPessoas: number;
     lote: string;
     imagem: string;
+    userId: number;
 }

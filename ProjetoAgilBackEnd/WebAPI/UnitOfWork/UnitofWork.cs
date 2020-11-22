@@ -15,9 +15,9 @@ namespace WebAPI.UnitOfWork
             _context = context;
         }
 
-        public void Commit()
+        public async Task Commit()
         {
-            _context.SaveChangesAsync();
+           await  _context.SaveChangesAsync();
         }
     }
 }

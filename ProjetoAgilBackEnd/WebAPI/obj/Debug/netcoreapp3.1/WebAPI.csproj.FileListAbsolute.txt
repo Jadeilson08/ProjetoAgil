@@ -71,6 +71,7 @@ C:\Dev\Projetos_pessoais\Eventos\ProjetoAgil\ProjetoAgilBackEnd\WebAPI\bin\Debug
 C:\Dev\Projetos_pessoais\Eventos\ProjetoAgil\ProjetoAgilBackEnd\WebAPI\bin\Debug\netcoreapp3.1\WebAPI.dll
 C:\Dev\Projetos_pessoais\Eventos\ProjetoAgil\ProjetoAgilBackEnd\WebAPI\bin\Debug\netcoreapp3.1\WebAPI.pdb
 C:\Dev\Projetos_pessoais\Eventos\ProjetoAgil\ProjetoAgilBackEnd\WebAPI\bin\Debug\netcoreapp3.1\Humanizer.dll
+C:\Dev\Projetos_pessoais\Eventos\ProjetoAgil\ProjetoAgilBackEnd\WebAPI\bin\Debug\netcoreapp3.1\Microsoft.AspNetCore.Authentication.JwtBearer.dll
 C:\Dev\Projetos_pessoais\Eventos\ProjetoAgil\ProjetoAgilBackEnd\WebAPI\bin\Debug\netcoreapp3.1\Microsoft.Data.SqlClient.dll
 C:\Dev\Projetos_pessoais\Eventos\ProjetoAgil\ProjetoAgilBackEnd\WebAPI\bin\Debug\netcoreapp3.1\Microsoft.EntityFrameworkCore.dll
 C:\Dev\Projetos_pessoais\Eventos\ProjetoAgil\ProjetoAgilBackEnd\WebAPI\bin\Debug\netcoreapp3.1\Microsoft.EntityFrameworkCore.Abstractions.dll
@@ -115,6 +116,8 @@ C:\Dev\Projetos_pessoais\Eventos\ProjetoAgil\ProjetoAgilBackEnd\WebAPI\bin\Debug
 C:\Dev\Projetos_pessoais\Eventos\ProjetoAgil\ProjetoAgilBackEnd\WebAPI\obj\Debug\netcoreapp3.1\WebAPI.csprojAssemblyReference.cache
 C:\Dev\Projetos_pessoais\Eventos\ProjetoAgil\ProjetoAgilBackEnd\WebAPI\obj\Debug\netcoreapp3.1\WebAPI.AssemblyInfoInputs.cache
 C:\Dev\Projetos_pessoais\Eventos\ProjetoAgil\ProjetoAgilBackEnd\WebAPI\obj\Debug\netcoreapp3.1\WebAPI.AssemblyInfo.cs
+C:\Dev\Projetos_pessoais\Eventos\ProjetoAgil\ProjetoAgilBackEnd\WebAPI\obj\Debug\netcoreapp3.1\WebAPI.csproj.CoreCompileInputs.cache
+C:\Dev\Projetos_pessoais\Eventos\ProjetoAgil\ProjetoAgilBackEnd\WebAPI\obj\Debug\netcoreapp3.1\WebAPI.MvcApplicationPartsAssemblyInfo.cache
 C:\Dev\Projetos_pessoais\Eventos\ProjetoAgil\ProjetoAgilBackEnd\WebAPI\obj\Debug\netcoreapp3.1\WebAPI.RazorTargetAssemblyInfo.cache
 C:\Dev\Projetos_pessoais\Eventos\ProjetoAgil\ProjetoAgilBackEnd\WebAPI\obj\Debug\netcoreapp3.1\WebAPI.csproj.CopyComplete
 C:\Dev\Projetos_pessoais\Eventos\ProjetoAgil\ProjetoAgilBackEnd\WebAPI\obj\Debug\netcoreapp3.1\staticwebassets\WebAPI.StaticWebAssets.Manifest.cache
@@ -122,6 +125,3 @@ C:\Dev\Projetos_pessoais\Eventos\ProjetoAgil\ProjetoAgilBackEnd\WebAPI\obj\Debug
 C:\Dev\Projetos_pessoais\Eventos\ProjetoAgil\ProjetoAgilBackEnd\WebAPI\obj\Debug\netcoreapp3.1\WebAPI.dll
 C:\Dev\Projetos_pessoais\Eventos\ProjetoAgil\ProjetoAgilBackEnd\WebAPI\obj\Debug\netcoreapp3.1\WebAPI.pdb
 C:\Dev\Projetos_pessoais\Eventos\ProjetoAgil\ProjetoAgilBackEnd\WebAPI\obj\Debug\netcoreapp3.1\WebAPI.genruntimeconfig.cache
-C:\Dev\Projetos_pessoais\Eventos\ProjetoAgil\ProjetoAgilBackEnd\WebAPI\bin\Debug\netcoreapp3.1\Microsoft.AspNetCore.Authentication.JwtBearer.dll
-C:\Dev\Projetos_pessoais\Eventos\ProjetoAgil\ProjetoAgilBackEnd\WebAPI\obj\Debug\netcoreapp3.1\WebAPI.csproj.CoreCompileInputs.cache
-C:\Dev\Projetos_pessoais\Eventos\ProjetoAgil\ProjetoAgilBackEnd\WebAPI\obj\Debug\netcoreapp3.1\WebAPI.MvcApplicationPartsAssemblyInfo.cache
