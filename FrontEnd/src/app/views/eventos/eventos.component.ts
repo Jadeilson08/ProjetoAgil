@@ -23,10 +23,4 @@ export class EventosComponent implements OnInit {
       }
     )
   }
-
-
-  detalhe(eventoId: number){
-    console.log(eventoId);
-    
-  }
 }

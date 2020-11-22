@@ -36,6 +36,21 @@ namespace WebAPI.Controllers
             }
         }
 
+        [HttpGet("{id}")]
+        [AllowAnonymous]
+        public async Task<IActionResult> Get(int id)
+        {
+            try
+            {
+                var eventos = await _eventosFacade.FindById(id);
+                return Ok(eventos);
+            }
+            catch (System.Exception)
+            {
+                return this.StatusCode(StatusCodes.Status500InternalServerError, "No value");
+            }
+        }
+
         [HttpPost]
         [Route("save")]
         public async Task<IActionResult> Save([FromBody] Evento evento)
