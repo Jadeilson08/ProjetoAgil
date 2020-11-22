@@ -12,7 +12,10 @@ import { EventosComponent } from './views/eventos/eventos.component';
 import { NgbModule } from '@ng-bootstrap/ng-bootstrap';
 import { EventosService } from './services/eventos.service';
 import { HeaderComponent } from './views/commons/header/header.component';
-import { NovoEventoComponent } from './views/eventos/novo-evento/novo-evento.component';
+import { NovoEventoComponent } from './views/eventos/novo/novo-evento.component';
+import { DetailsEventoComponent } from './views/eventos/details-evento/details-evento.component';
+
+
 
 
 @NgModule({
@@ -20,7 +23,9 @@ import { NovoEventoComponent } from './views/eventos/novo-evento/novo-evento.com
     AppComponent,
     EventosComponent,
     HeaderComponent,
-    NovoEventoComponent
+    NovoEventoComponent,
+    DetailsEventoComponent,
+    
   ],
   imports: [
     BrowserModule,

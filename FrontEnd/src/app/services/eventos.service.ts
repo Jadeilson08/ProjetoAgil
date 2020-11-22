@@ -32,4 +32,8 @@ export class EventosService {
     formData.append('file', fileToUpload, fileToUpload.name);
     return this.httpclient.post(`${GeralConfig.api}${this.eventos}upload`, formData);
   }
+
+  getById(id: number): Observable<Evento>{
+    return this.httpclient.get<Evento>(GeralConfig.api+this.eventos+id);
+  }
 }

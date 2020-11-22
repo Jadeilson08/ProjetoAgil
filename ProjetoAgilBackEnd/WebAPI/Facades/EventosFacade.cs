@@ -21,6 +21,11 @@ namespace WebAPI.Facades
             return await _eventoRepository.FindAllAsync();
         }
 
+        public async Task<Evento> FindById(int id)
+        {
+            return await _eventoRepository.FindByIdAsync(id);
+        }
+
         public async Task SaveAsync(Evento evento)
         {
             await _eventoRepository.SaveAsync(evento);

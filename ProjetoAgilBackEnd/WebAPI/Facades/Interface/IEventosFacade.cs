@@ -10,5 +10,6 @@ namespace WebAPI.Facades.Interface
     {
         Task<List<Evento>> FindAll();
         Task SaveAsync(Evento evento);
+        Task<Evento> FindById(int id);
     }
 }

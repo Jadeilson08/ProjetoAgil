@@ -23,7 +23,7 @@
             <td>{{evento.qtdPessoas}}</td>
             <td>{{evento.lote}}</td>
             <td>
-              <button (click)="detalhe(evento.id)" class="btn btn-outline-primary"><i class="far fa-edit"></i></button>
+              <button [routerLink]="['/eventos/details', evento.id]" class="btn btn-outline-primary"><i class="far fa-edit"></i></button>
             </td>
           </tr>
         </tbody>

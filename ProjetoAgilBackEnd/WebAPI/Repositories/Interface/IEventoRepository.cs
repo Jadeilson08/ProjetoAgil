@@ -10,5 +10,7 @@ namespace WebAPI.Repositories.Interface
     {
         Task<List<Evento>> FindAllAsync();
         Task SaveAsync(Evento evento);
+        Task<Evento> FindByIdAsync(int id);
+
     }
 }

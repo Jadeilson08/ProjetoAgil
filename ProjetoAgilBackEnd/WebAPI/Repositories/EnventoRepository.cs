@@ -27,11 +27,15 @@ namespace WebAPI.Repositories
             return await _context.Eventos.ToListAsync();
         }
 
+        public async Task<Evento> FindByIdAsync(int id)
+        {
+            return await _context.Eventos.Where(x => x.Id == id).FirstOrDefaultAsync();
+        }
+
         public async Task SaveAsync(Evento evento)
         {
             await _context.AddAsync(evento);
             await _unitOfWork.Commit();
-
         }
     }
 }
