@@ -9,4 +9,4 @@ Até o momento, não tenho muitos requisitos para descrever aqui, mas assim que 
 Provavelmente este projeto nunca terá um fim. Por isso faço dessa frase minha palavras:
 >Vamos deixar a meta aberta. Quando atingirmos a meta, nós dobramos a meta.
 
-Enfim, até mais e obrigado pelos os peixes.
+Enfim, até mais e obrigado pelos os peixes..
