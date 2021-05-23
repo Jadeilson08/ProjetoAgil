@@ -1,12 +1,9 @@
 using System.Threading.Tasks; // Trabalhando de forma assíncrona
 using Microsoft.AspNetCore.Mvc; // herança ControllerBase
-using WebAPI.Services;
 using Microsoft.AspNetCore.Http;
-using WebAPI.Services.Interface;
-using WebAPI.Facades.Interface;
 using System.IO;
 using System.Net.Http.Headers;
-using WebAPI.Models;
+using Domain;
 using Microsoft.AspNetCore.Authorization;
 
 namespace WebAPI.Controllers
@@ -15,11 +12,11 @@ namespace WebAPI.Controllers
     [Route("[controller]")]
     public class EventosController : ControllerBase
     {
-        private readonly IEventosFacade _eventosFacade;
-        public EventosController(IEventosFacade eventosFacade)
+        //private readonly IEventosFacade _eventosFacade;
+        /*public EventosController(IEventosFacade eventosFacade)
         {
             _eventosFacade = eventosFacade;
-        }
+        }*/
 
         [HttpGet]
         [AllowAnonymous]
@@ -27,8 +24,8 @@ namespace WebAPI.Controllers
         {
             try
             {
-                var eventos = await _eventosFacade.FindAll();
-                return Ok(eventos);
+                //var eventos = await _eventosFacade.FindAll();
+                return Ok();
             }
             catch (System.Exception)
             {
@@ -42,8 +39,8 @@ namespace WebAPI.Controllers
         {
             try
             {
-                var eventos = await _eventosFacade.FindById(id);
-                return Ok(eventos);
+                //var eventos = await _eventosFacade.FindById(id);
+                return Ok();
             }
             catch (System.Exception)
             {
@@ -57,8 +54,7 @@ namespace WebAPI.Controllers
         {
             try
             {
-                //Evento evento = new Evento();
-                await _eventosFacade.SaveAsync(evento);
+                //await _eventosFacade.SaveAsync(evento);
                 return Ok();
             }
             catch (System.Exception)
