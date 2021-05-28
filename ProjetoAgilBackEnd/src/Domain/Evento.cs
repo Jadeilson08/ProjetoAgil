@@ -1,8 +1,10 @@
 using System;
 using System.Collections.Generic;
+using Domain.Interface;
+
 namespace Domain
 {
-    public class Evento
+    public class Evento : IEntity
     {
         public int Id { get; set; }
         public string Local { get; set; }

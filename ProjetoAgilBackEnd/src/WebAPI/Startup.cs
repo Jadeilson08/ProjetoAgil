@@ -8,6 +8,7 @@ using System.IO;
 using Microsoft.AspNetCore.Http;
 using Microsoft.EntityFrameworkCore;
 using Persistence;
+using Persistence.Context;
 
 namespace WebAPI
 {
@@ -26,7 +27,7 @@ namespace WebAPI
         {
             services.AddControllers();
             // using Microsoft.EntityFrameworkCore;
-            services.AddDbContext<ProAgilContext>(options =>
+            services.AddDbContext<PersistenceContext>(options =>
                 options.UseSqlite(Configuration.GetConnectionString("Default")));
 
             services.AddCors(options =>

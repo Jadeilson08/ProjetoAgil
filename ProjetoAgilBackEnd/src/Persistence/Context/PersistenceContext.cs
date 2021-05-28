@@ -1,11 +1,12 @@
 using Domain;
 using Microsoft.EntityFrameworkCore;
+using Persistence.Context.Generic;
 
-namespace Persistence
+namespace Persistence.Context
 {
-    public class ProAgilContext : DbContext
+    public class PersistenceContext : ContextGen
     {
-        public ProAgilContext(DbContextOptions<ProAgilContext> options) : base(options){}
+        public PersistenceContext(DbContextOptions<PersistenceContext> options) : base(options){}
 
         public DbSet<Evento> Eventos { get; set; }
         public DbSet<Palestrante> Palestrantes { get; set; }
@@ -15,6 +16,7 @@ namespace Persistence
 
         protected override void OnModelCreating(ModelBuilder modelBuilder)
         {
+            base.OnModelCreating(modelBuilder);
             modelBuilder.Entity<PalestranteEvento>().HasKey(pe => new {pe.EventoId, pe.PalestranteId});
         }
     }

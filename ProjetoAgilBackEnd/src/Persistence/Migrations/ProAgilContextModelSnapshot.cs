@@ -4,10 +4,11 @@ using Microsoft.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore.Infrastructure;
 using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 using Persistence;
+using Persistence.Context;
 
 namespace Persistence.Migrations
 {
-    [DbContext(typeof(ProAgilContext))]
+    [DbContext(typeof(PersistenceContext))]
     partial class ProAgilContextModelSnapshot : ModelSnapshot
     {
         protected override void BuildModel(ModelBuilder modelBuilder)

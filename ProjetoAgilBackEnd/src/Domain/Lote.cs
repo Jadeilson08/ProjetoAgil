@@ -1,8 +1,9 @@
 using System;
+using Domain.Interface;
 
 namespace Domain
 {
-    public class Lote
+    public class Lote : IEntity
     {
         public int Id { get; set; }
         public string Nome { get; set; }

@@ -1,7 +1,9 @@
 using System.Collections.Generic;
+using Domain.Interface;
+
 namespace Domain
 {
-    public class Palestrante
+    public class Palestrante : IEntity
     {
         public int Id { get; set; }
         public string Nome { get; set; }

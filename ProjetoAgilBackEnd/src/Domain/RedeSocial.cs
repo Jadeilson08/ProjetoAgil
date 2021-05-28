@@ -1,6 +1,8 @@
+using Domain.Interface;
+
 namespace Domain
 {
-    public class RedeSocial
+    public class RedeSocial : IEntity
     {
         public int Id { get; set; }
         public string Nome { get; set; }

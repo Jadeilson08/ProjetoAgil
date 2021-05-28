@@ -5,10 +5,11 @@ using Microsoft.EntityFrameworkCore.Infrastructure;
 using Microsoft.EntityFrameworkCore.Migrations;
 using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 using Persistence;
+using Persistence.Context;
 
 namespace Persistence.Migrations
 {
-    [DbContext(typeof(ProAgilContext))]
+    [DbContext(typeof(PersistenceContext))]
     [Migration("20210523023914_initial")]
     partial class initial
     {
