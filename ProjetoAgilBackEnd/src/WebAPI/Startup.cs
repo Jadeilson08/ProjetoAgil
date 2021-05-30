@@ -5,10 +5,17 @@ using Microsoft.Extensions.DependencyInjection;
 using Microsoft.Extensions.Hosting;
 using Microsoft.Extensions.FileProviders;
 using System.IO;
+using Application.Services.EventoService;
+using Application.Services.EventoService.Interface;
 using Microsoft.AspNetCore.Http;
 using Microsoft.EntityFrameworkCore;
+using Newtonsoft.Json;
 using Persistence;
 using Persistence.Context;
+using Persistence.Repository.EventoRepository;
+using Persistence.Repository.EventoRepository.Interface;
+using Persistence.UnitOfWork;
+using Persistence.UnitOfWork.Interface;
 
 namespace WebAPI
 {
@@ -25,11 +32,15 @@ namespace WebAPI
         readonly string MyAllowSpecificOrigins = "_myAllowSpecificOrigins";
         public void ConfigureServices(IServiceCollection services)
         {
-            services.AddControllers();
+            services.AddControllers()
+                .AddNewtonsoftJson(x => 
+                    x.SerializerSettings.ReferenceLoopHandling = ReferenceLoopHandling.Ignore);
             // using Microsoft.EntityFrameworkCore;
             services.AddDbContext<PersistenceContext>(options =>
                 options.UseSqlite(Configuration.GetConnectionString("Default")));
 
+            Application(services);
+            UnitOfWork(services);
             services.AddCors(options =>
             {
                 options.AddPolicy(MyAllowSpecificOrigins,
@@ -43,6 +54,20 @@ namespace WebAPI
                 });
             });
             
+        }
+
+        private void Application(IServiceCollection services)
+        {
+            services.AddScoped<ISrEvento, SrEvento>();
+        }
+        private void UnitOfWork(IServiceCollection services)
+        {
+            services.AddScoped<IUnitOfWork, UnitOfWork>();
+        }
+
+        private void Repository(IServiceCollection services)
+        {
+            services.AddScoped<IRepoEvento, RepoEvento>();
         }
 
         // This method gets called by the runtime. Use this method to configure the HTTP request pipeline.
