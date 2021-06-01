@@ -7,8 +7,8 @@ namespace Application.Services.EventoService.Interface
 {
     public interface ISrEvento : ISrGen
     {
-        void NewEvento(Evento evento);
-        void UpdateEvento(Evento evento);
+        Evento NewEvento(Evento evento);
+        Evento UpdateEvento(Evento evento);
         void DeleteEvento(Evento evento);
         Task<IEnumerable<Evento>> GetAllEventosByTemaAsync(string tema, bool includePalestrantes = false);
         Task<IEnumerable<Evento>> GetAllEventosAsync(bool includePalestrantes = false);

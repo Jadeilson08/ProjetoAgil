@@ -29,7 +29,8 @@ namespace Persistence.Repository.EventoRepository
             query = query.AsNoTracking().OrderBy(e => e.Id)
                 .Where(x => x.Tema.ToUpper().Contains(tema.ToUpper()));
 
-            return await query.ToListAsync();
+            var eventos = await query.ToListAsync();
+            return eventos;
         }
 
         public async Task<IEnumerable<Domain.Evento>> GetAllEventosAsync(bool includePalestrantes = false)
@@ -47,9 +48,9 @@ namespace Persistence.Repository.EventoRepository
             return await query.ToListAsync();
         }
 
-        public async Task<Domain.Evento> GetEventoByIdAsync(int eventoId, bool includePalestrantes = false)
+        public async Task<Evento> GetEventoByIdAsync(int eventoId, bool includePalestrantes = false)
         {
-            IQueryable<Domain.Evento> query = DbSet
+            IQueryable<Evento> query = DbSet
                 .Include(x => x.Lotes)
                 .Include(x => x.RedeSociais);
             if (includePalestrantes)
@@ -60,8 +61,8 @@ namespace Persistence.Repository.EventoRepository
 
             query = query.AsNoTracking().OrderBy(e => e.Id)
                 .Where(x => x.Id == eventoId);
-
-            return await query.FirstOrDefaultAsync();
+            var evento = await query.FirstOrDefaultAsync();
+            return evento;
         }
     }
 }

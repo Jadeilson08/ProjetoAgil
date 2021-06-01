@@ -38,7 +38,7 @@ namespace WebAPI.Controllers
             }
         }
 
-        [HttpGet("{id}")]
+        [HttpGet("{id}/id")]
         [AllowAnonymous]
         public async Task<IActionResult> Get(int id)
         {
@@ -53,7 +53,7 @@ namespace WebAPI.Controllers
                 return StatusCode(StatusCodes.Status500InternalServerError, "No value");
             }
         }
-        [HttpGet("{tema}")]
+        [HttpGet("{tema}/tema")]
         public async Task<IActionResult> Get(string tema)
         {
             try
@@ -73,8 +73,8 @@ namespace WebAPI.Controllers
         {
             try
             {
-                _srEvento.NewEvento(evento);
-                return Ok();
+                var newEvento = _srEvento.NewEvento(evento);
+                return Ok(newEvento);
             }
             catch (System.Exception)
             {
@@ -118,8 +118,8 @@ namespace WebAPI.Controllers
         [HttpPut("{id}")]
         public IActionResult Put([FromBody] Evento evento)
         {
-            _srEvento.UpdateEvento(evento);
-            return Ok();
+            var updateEvento = _srEvento.UpdateEvento(evento);
+            return Ok(updateEvento);
         }
 
         [HttpDelete("{id}")]

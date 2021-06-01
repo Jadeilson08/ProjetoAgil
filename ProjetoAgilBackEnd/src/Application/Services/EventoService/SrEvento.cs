@@ -1,3 +1,4 @@
+using System;
 using System.Collections.Generic;
 using System.Threading.Tasks;
 using Application.Services.EventoService.Interface;
@@ -15,16 +16,27 @@ namespace Application.Services.EventoService
             _unitOfWork = unitOfWork;
         }
 
-        public void NewEvento(Evento evento)
+        public Evento NewEvento(Evento evento)
         {
-            _unitOfWork.RepoEvento.Add(evento);
-            _unitOfWork.SaveChanges();
+            try
+            {
+                _unitOfWork.RepoEvento.Add(evento);
+                _unitOfWork.SaveChanges();
+                return evento;
+            }
+            catch (Exception e)
+            {
+                Console.WriteLine(e);
+                throw;
+            }
+            
         }
 
-        public void UpdateEvento(Evento evento)
+        public Evento UpdateEvento(Evento evento)
         {
             _unitOfWork.RepoEvento.Update(evento);
             _unitOfWork.SaveChanges();
+            return evento;
         }
 
         public void DeleteEvento(Evento evento)
