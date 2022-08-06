@@ -23,4 +23,12 @@ export class EventosComponent implements OnInit {
       }
     )
   }
+
+  iconeId(id) {
+    if(id == null)
+      return 'batata';
+      
+    return id;
+  }
+
 }
